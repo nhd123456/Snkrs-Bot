@@ -43,8 +43,11 @@ logging.config.dictConfig({
 })
 
 
-NIKE_HOME_URL = "https://www.nike.com/login"
+NIKE_HOME_URL = "https://www.nike.com/login"  # TODO: change to TW Nike page
+
+# TODO: 網頁架構有些許不同，要改按鈕路徑
 SUBMIT_BUTTON_XPATH = "/html/body/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/div/div/div[6]/button"
+
 LOGGER = logging.getLogger()
 
 def run(driver, shoe_type, username, password, url, shoe_size, shipping_option, login_time=None, release_time=None,
