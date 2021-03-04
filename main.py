@@ -50,6 +50,7 @@ SUBMIT_BUTTON_XPATH = "/html/body/div[2]/div/div/div[2]/div/div/div/div/div[2]/d
 
 LOGGER = logging.getLogger()
 
+
 def run(driver, shoe_type, username, password, url, shoe_size, shipping_option, login_time=None, release_time=None,
         shipping_address=None, page_load_timeout=None, screenshot_path=None, html_path=None, select_payment=False, purchase=False,
         num_retries=None, dont_quit=False, cvv=None):
@@ -240,6 +241,7 @@ def login(driver, username, password):
     
     LOGGER.info("Successfully logged in")
 
+
 def retry_login(driver, username, password):
     num_retries_attempted = 0
     num_retries = 5
@@ -279,7 +281,8 @@ def retry_login(driver, username, password):
     wait_until_visible(driver=driver, xpath="//a[@data-path='myAccount:greeting']")
     
     LOGGER.info("Successfully logged in")
-    
+
+
 def select_shoe_size(driver, shoe_size, shoe_type, skip_size_selection):
     LOGGER.info("Waiting for size dropdown to appear")
 
@@ -339,7 +342,8 @@ def select_payment_option(driver):
 
     LOGGER.info("Checking payment checkbox")
     driver.find_element_by_xpath(xpath).click()
-    
+
+
 def input_address(driver, shipping_address):
     LOGGER.info("Inputting address")
     LOGGER.info("First Name=" + shipping_address["first_name"])
@@ -493,8 +497,8 @@ def click_submit_button(driver, xpath_o=None):
     driver.find_element_by_xpath(xpath).click()
 
 def poll_checkout_phase_one(driver):
-    #Loop to determine which element appears first
-    #Limit this loop as "Verify Phone Number" dialog may appear
+    # Loop to determine which element appears first
+    # Limit this loop as "Verify Phone Number" dialog may appear
     checkout_num_retries_attempted = 0
     checkout_num_retries = 25
     skip_add_address = False
@@ -542,7 +546,6 @@ def poll_checkout_phase_one(driver):
         else:
             LOGGER.info("Too many iterations through checkout element check. Terminating check...")
             break
-            
         return skip_add_address, skip_select_shipping, skip_payment
         
 def poll_checkout_phase_two(driver):
