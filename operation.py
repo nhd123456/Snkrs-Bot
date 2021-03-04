@@ -40,7 +40,7 @@ logging.config.dictConfig({
 })
 
 
-NIKE_HOME_URL = "https://www.nike.com/login"  # TODO: change to TW Nike page
+NIKE_HOME_URL = "https://www.nike.com/login"
 
 # TODO: 網頁架構有些許不同，要改按鈕路徑
 SUBMIT_BUTTON_XPATH = "/html/body/div[2]/div/div/div[2]/div/div/div/div/div[2]/div/div/div[3]/div/div/div[6]/button"
@@ -105,9 +105,10 @@ def run(driver, shoe_type, username, password, url, shoe_size, shipping_option, 
             try:
                 click_buy_button(driver=driver)
             except Exception as e:
-                LOGGER.exception("Failed to click buy button: " + str(e))                                
+                LOGGER.exception("Failed to click add-to-cart button: " + str(e))
                 six.reraise(Exception, e, sys.exc_info()[2])
-                
+            # TODO: 目前購買步驟更改至此- 成功加入購物車，後續結帳步驟需增加function
+
             skip_add_address, skip_select_shipping, skip_payment = poll_checkout_phase_one(driver=driver)
                     
             if skip_add_address is False and shipping_address:
@@ -322,9 +323,9 @@ def select_shoe_size(driver, shoe_size, shoe_type, skip_size_selection):
 
 
 def click_buy_button(driver):
-    xpath = "//button[@data-qa='feed-buy-cta']"
+    xpath = "//button[@data-qa='add-to-cart']"
     
-    LOGGER.info("Waiting for buy button to become present")
+    LOGGER.info("Waiting for add to cart button to become present")
     element = wait_until_present(driver, xpath=xpath, duration=10) 
     
     LOGGER.info("Clicking buy button")

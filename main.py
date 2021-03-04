@@ -8,7 +8,7 @@ if __name__ == "__main__":
     ''' pass in parameters '''
     username = 'nhd123456ekek@gmail.com'
     password = '5387Ekek'
-    url = 'https://www.nike.com/tw/launch/t/womens-air-max-viva-wheat'
+    url = 'https://www.nike.com/tw/launch/t/kd13-play-for-the-future'
     options = webdriver.FirefoxOptions()
     headless = False
     if headless:
@@ -19,13 +19,13 @@ if __name__ == "__main__":
     driver = webdriver.Firefox(executable_path=executable_path, firefox_options=options, log_path=os.devnull)
 
     shoe_type = 'CM'  # default="M", choices=("M", "W", "Y", "C", "XXS", "XS", "S", "L", "XL")
-    shoe_size = '23'
+    shoe_size = '30'
     shipping_address = None  # json.loads()
     shipping_option = 'STANDARD'  # STANDARD, TWO_DAY or NEXT_DAY
     screenshot_path = None
-    select_payment = False
+    select_payment = True
     purchase = False
-    num_retries = None
+    num_retries = 1
     dont_quit = False
     cvv = None
     page_load_timeout = 2
