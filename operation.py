@@ -1,14 +1,11 @@
-import os
 import sys
 import six
 import pause
-import argparse
 import logging.config
 import re
 import time
 import random
 import json
-from selenium import webdriver
 from dateutil import parser as date_parser
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait

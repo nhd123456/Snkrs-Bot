@@ -1,35 +1,9 @@
-import sys
 import json
 import os
 from operation import run
 from selenium import webdriver
 
 if __name__ == "__main__":
-
-    '''
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--username", required=True)
-    parser.add_argument("--password", required=True)
-    parser.add_argument("--url", required=True)
-    parser.add_argument("--shoe-size", default=None)
-    parser.add_argument("--login-time", default=None)
-    parser.add_argument("--release-time", default=None)
-    parser.add_argument("--screenshot-path", default=None)
-    parser.add_argument("--html-path", default=None)
-    parser.add_argument("--page-load-timeout", type=int, default=2)
-    parser.add_argument("--driver-type", default="firefox", choices=("firefox", "chrome"))
-    parser.add_argument("--headless", action="store_true")
-    parser.add_argument("--select-payment", action="store_true")
-    parser.add_argument("--purchase", action="store_true")
-    parser.add_argument("--num-retries", type=int, default=1)
-    parser.add_argument("--dont-quit", action="store_true")
-    parser.add_argument("--shoe-type", default="M", choices=("M", "W", "Y", "C", "XXS", "XS", "S", "L", "XL"))
-    parser.add_argument("--shipping-option", default="STANDARD", choices=("STANDARD", "TWO_DAY", "NEXT_DAY"))
-    parser.add_argument("--cvv", default=None)
-    parser.add_argument("--shipping-address", default=None)
-    parser.add_argument("--webdriver-path", required=False, default=None)
-    args = parser.parse_args()
-    '''
 
     ''' pass in parameters '''
     username = 'nhd123456ekek@gmail.com'
